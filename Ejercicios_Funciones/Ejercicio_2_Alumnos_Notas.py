@@ -4,26 +4,67 @@
 "Pedro": [6.5, 6.8, 7.0]
 }'''
 
+alumnos = {}
+
 def agregar_alumno(alumnos):
-    Nombre_alumno = input("Ingrese nombre de alumno: ").strip().capitalize()
+    print("Agregando nuevo alumno")
+    Nombre_alumno = input("Agrege nombre de alumno: ").strip()
     if Nombre_alumno == "":
-        print("El nombre de almno no puede estar vacio, intenete nuevamente")
+        print("Nombre vacio, ingrese nombre correcto")
+        return
+    if Nombre_alumno.isdigit():
+        print("Error! El nombre no puede ser solo numeros")
         return
     if Nombre_alumno in alumnos:
-        print("Nombre ya existe, intenta agregando segundo nombre o apellido ó alias")
-        return
+        print("Alumno ya existe! Intente de nuevo") 
+    
+    Cantidad_notas = int(input("Ingrese cantidad de notas a agregar: "))
+    
+    Notas = []
+    for i in range(Cantidad_notas):
+        Nota_alumno = float(input(f"Ingrese nota a registrar {i+1}/{Cantidad_notas}: "))
+        Notas.append(Nota_alumno)
+        
+    alumnos[Nombre_alumno] = Notas
+    print(f"El registro se ha agregado exitosamente: {Nombre_alumno} - Notas: {Notas}")
 
-def mostrar_alumnos(alumnos):
-    if alumnos is None:
-        print("No existen alumnos registrados")
-        return
+    
+        
+        
+     
+
+
+
+
+while True:
+    print('''
+    ======== MENU =========
+    1. Agregar alumno
+    2. Mostrar alumnos
+    3. Ver promedios
+    4. Mejor alumno
+    5. Cantidad de aprobados
+    6. Salir
+    ========================
+
+    ''')
+
+
+    Opcion = int(input("Seleccione su opcion segun Menú: "))
+
+    if Opcion == 1:
+         agregar_alumno(alumnos)
+    elif Opcion == 2:
+        print("")
+    elif Opcion == 3:
+        print("")
+    elif Opcion == 4:
+        print("")
+    elif Opcion == 5:
+        print("")
+    elif Opcion == 6:
+        print("")
     else:
-        print(f"Los alumnos con notas registradas son {[alumnos][0]}")
+        print("Seleccione una opcion valida en el Menú")
 
-def ver_promedios(alumnos):
 
-def mejor_alumno(alumnos):
-
-def cantidad_aprobados(alumnos):
-
-alumnos = {}
